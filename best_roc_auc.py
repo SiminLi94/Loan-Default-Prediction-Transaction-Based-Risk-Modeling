@@ -8,8 +8,6 @@ from scipy import interp
 from sklearn.model_selection import StratifiedKFold
 import xgboost
 
-
-
 def mk_data(data,samples,strt_indx,stp_indx,mode):
   
     feats = 27
