@@ -29,7 +29,7 @@ import pandas as pd
 data = pd.read_pickle('path/to/data/dataset.pkl')
 
 ## Submission: 
-A) Your submission should be a CSV file containing: 5,000 rows corresponding to instances 10000-14999 from the dataset. Each row has two columns:
+A) Your submission should be a CSV file containing 5,000 rows corresponding to instances 10000-14999 from the dataset. Each row has two columns:
 
 column 1 – id of customer, 
 
