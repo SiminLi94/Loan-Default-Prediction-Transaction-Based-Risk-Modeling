@@ -15,6 +15,7 @@ The goal of this project is to build a model that predicts a probability that a 
 **loan_date** – date of loan
 
 outcome:
+
 **isDefault** – did the customer pay back (isDefault=0) or not pay back (isDefault=1)?
 isDefault is given for the first 10000 customers. The goal is to assign a probability to isDefault for the remaining 5000 customers. 
 
@@ -28,10 +29,12 @@ import pandas as pd
 data = pd.read_pickle('path/to/data/dataset.pkl')
 
 ## Submission: 
-A) Your submission should be a CSV file containing: 5,000 rows corresponding to instances 10000-14999 from the dataset
-Each row has two columns:
-column 1 – id of customer
+A) Your submission should be a CSV file containing: 5,000 rows corresponding to instances 10000-14999 from the dataset. Each row has two columns:
+
+column 1 – id of customer, 
+
 column 2 – probability that isDefault==1 (probability the customer does not pay back the loan)
+
 B) Create a small (1 page) presentation that you would hypothetically give to a salesperson of the company when presenting your algorithm, so that the salesperson could understand your algorithm and explain how it works to a potential customer.
 
 In the 1 page, answer the following:
