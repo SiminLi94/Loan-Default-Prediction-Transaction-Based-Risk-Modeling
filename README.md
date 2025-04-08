@@ -1,45 +1,31 @@
 # Loan Default Prediction: Transaction-Based Risk Modeling
-The goal of this project is to build a model that predicts a probability that a given customer will default on a loan A customer profile consists of a list of bank transactions preceding the loan request. Each transaction is either a debit (money going out of account, negative values) or credit (money coming into account, positive values).
 
-### Customer profile (attributes) (1500 customers total): 
-**Id** – id of each customer
+## Project Overview
 
-**dates** – dates of each transaction
+The goal of this project is to build a machine learning model that predicts the probability that a given customer will default on a loan. The model uses customer transaction history to make predictions, where each transaction is classified as either a debit (money going out of the account) or a credit (money coming into the account). This prediction aims to help financial institutions assess loan risk before granting loans.
 
-**transaction_amount** – numpy array of credits and debits, length varies across different customers (your predictions will be primarily based on information in this array) 
+## Customer Profile (Attributes)
 
-**days_before_request** – days before loan request for each transaction 
+The customer profile consists of the following attributes for each customer:
 
-**loan_amount** – amount loaned to customer by bank
+- **Id**: A unique identifier for each customer.
+- **dates**: Dates of each transaction.
+- **transaction_amount**: A numpy array of credits and debits. The length varies across customers, and this array contains the primary information used for predictions.
+- **days_before_request**: The number of days before the loan request corresponding to each transaction.
+- **loan_amount**: The amount loaned to the customer by the bank.
+- **loan_date**: The date the loan was given.
 
-**loan_date** – date of loan
+### Outcome:
+- **isDefault**: Indicates whether the customer paid back the loan (isDefault = 0) or did not pay back the loan (isDefault = 1). This information is available for the first 10,000 customers. The goal of this project is to predict the probability of `isDefault` for the remaining 5,000 customers.
 
-outcome:
+### Dataset:
+- **Training Data**: Instances 0 - 9999.
+- **Test Data**: Instances 10000 - 14999 (no `isDefault` column in the test set).
 
-**isDefault** – did the customer pay back (isDefault=0) or not pay back (isDefault=1)?
-isDefault is given for the first 10000 customers. The goal is to assign a probability to isDefault for the remaining 5000 customers. 
+The dataset can be accessed via the following link:  
+[Download Dataset](https://drive.google.com/file/d/1oPSNCYeCVGJsTX60X-PW088R8S0AMmeT/view?usp=sharing)
 
-Train your model on the training data (instances 0 - 9999) and make predictions on the test data (instances 10000- 14,999). The test data is the same format as training data, except it does not contain the isDefault column.
-
-The data is available at the following link:
-https://drive.google.com/file/d/1oPSNCYeCVGJsTX60X-PW088R8S0AMmeT/view?usp=sharing
-
-The data can be loaded from dataset.pkl in python using:
+The data can be loaded in Python using:
+```python
 import pandas as pd
 data = pd.read_pickle('path/to/data/dataset.pkl')
-
-## Submission: 
-A) Your submission should be a CSV file containing 5,000 rows corresponding to instances 10000-14999 from the dataset. Each row has two columns:
-
-column 1 – id of customer, 
-
-column 2 – probability that isDefault==1 (probability the customer does not pay back the loan)
-
-B) Create a small (1 page) presentation that you would hypothetically give to a salesperson of the company when presenting your algorithm, so that the salesperson could understand your algorithm and explain how it works to a potential customer.
-
-In the 1 page, answer the following:
-- Which algorithm did you use and why?
-- How certain are you of the results?
-- Is there a subset of potential customers that are very safe to lend to? A subset that is very dangerous? 
-- What features of the dataset best predict isDefault?
-- Do these features make sense intuitively? Justify your use of the features. 
