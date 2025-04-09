@@ -24,8 +24,3 @@ The customer profile consists of the following attributes for each customer:
 
 The dataset can be accessed via the following link:  
 [Download Dataset](https://drive.google.com/file/d/1oPSNCYeCVGJsTX60X-PW088R8S0AMmeT/view?usp=sharing)
-
-The data can be loaded in Python using:
-```python
-import pandas as pd
-data = pd.read_pickle('path/to/data/dataset.pkl')
